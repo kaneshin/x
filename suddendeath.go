@@ -17,7 +17,7 @@ func (s SuddenDeath) String() string {
 	contents := strings.Split(strings.TrimRight(string(s), "\n"), "\n")
 	output := make([]string, 0, len(contents)+2)
 
-	docs := make([]utf8string.String, 0, len(contents))
+	docs := make([]*utf8string.String, 0, len(contents))
 	for i := 0; i < len(contents); i++ {
 		docs = append(docs, utf8string.NewString(contents[i]))
 	}

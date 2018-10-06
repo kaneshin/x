@@ -8,25 +8,8 @@ type String struct {
 	NumASCII int
 	Width    int
 }
-type Docs []String
 
-func (d Docs) StringByMaxWidth() *String {
-	if len(d) == 0 {
-		return nil
-	}
-
-	maxNum := 0
-	maxWidth := d[maxNum].Width
-	for i := 1; i < len(d); i++ {
-		if maxWidth < d[i].Width {
-			maxNum = i
-			maxWidth = d[i].Width
-		}
-	}
-	return &d[maxNum]
-}
-
-func NewString(contents string) String {
+func NewString(contents string) *String {
 	s := String{
 		Raw: contents,
 	}
@@ -41,5 +24,23 @@ func NewString(contents string) String {
 		s.NumRunes = utf8.RuneCountInString(s.Raw)
 	}
 	s.Width = 2*s.NumRunes - s.NumASCII
-	return s
+	return &s
+}
+
+type Docs []*String
+
+func (d Docs) StringByMaxWidth() *String {
+	if len(d) == 0 {
+		return nil
+	}
+
+	maxNum := 0
+	maxWidth := d[maxNum].Width
+	for i := 1; i < len(d); i++ {
+		if maxWidth < d[i].Width {
+			maxNum = i
+			maxWidth = d[i].Width
+		}
+	}
+	return d[maxNum]
 }
