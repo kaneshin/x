@@ -7,7 +7,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/kaneshin/x"
+	"github.com/kaneshin/x/acme"
 )
 
 func init() {
@@ -45,7 +45,7 @@ func run() error {
 	if err != nil {
 		return err
 	}
-	os.Stdout.Write(x.SuddenDeath(string(src)).Bytes())
+	os.Stdout.Write(acme.SuddenDeath(string(src)).Bytes())
 	return nil
 }
 

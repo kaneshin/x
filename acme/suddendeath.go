@@ -1,10 +1,10 @@
-package x
+package acme
 
 import (
 	"fmt"
 	"strings"
 
-	"github.com/kaneshin/x/exp/utf8string"
+	"github.com/kaneshin/x/utf8string"
 )
 
 type SuddenDeath string
