@@ -14,8 +14,10 @@ HAVE_GOCOV:=$(shell which gocov)
 
 init:
 
-unit: lint vet cyclo build test
-unit-report: lint vet cyclo build test-report
+# unit: lint vet cyclo build test
+unit: vet cyclo test
+# unit-report: lint vet cyclo build test-report
+unit-report: vet cyclo test-report
 
 lint: golint
 	@echo "go lint"
