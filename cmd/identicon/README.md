@@ -2,7 +2,7 @@
 
 Generating identicon image!
 
-![kaneshin.png](https://github.com/kaneshin/identicon/raw/master/kaneshin.png)
+![identicon.png](https://github.com/kaneshin/x/raw/master/identicon.png)
 
 ## Installation
 
