@@ -51,7 +51,7 @@ test-report:
 golint:
 ifndef HAVE_GOLINT
 	@echo "Installing linter"
-	@go get -u github.com/golang/lint/golint
+	@go get -u golang.org/x/lint/golint
 endif
 
 gocyclo:
