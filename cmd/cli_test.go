@@ -14,18 +14,6 @@ var suite = map[string][]struct {
 	stderr   string
 	exitCode int
 }{
-	"echo": {
-		{
-			args:   []string{"-n", "Hello"},
-			stdout: "Hello",
-		},
-	},
-	"rev": {
-		{
-			stdin:  "Hello",
-			stdout: "olleH",
-		},
-	},
 	"suddendeath": {
 		{
 			stdin: `突然の死`,
